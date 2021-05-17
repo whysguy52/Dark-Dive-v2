@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Models/Submarine/Camera.gd" type="Script" id=1]
+[ext_resource path="res://Models/Submarine/compass.gd" type="Script" id=2]
+[ext_resource path="res://Models/Submarine/compass.tres" type="ArrayMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+params_cull_mode = 2
+
+[node name="Camera" type="Camera"]
+transform = Transform( 1, 0, 0, 0, 0.980751, 0.195262, 0, -0.195262, 0.980751, 0, 1.35354, 16.7697 )
+far = 1000.0
+script = ExtResource( 1 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.807856, -0.58938, 0, 0.58938, 0.807856, 0, 0.148882, -0.397089 )
+light_energy = 3.0
+spot_range = 0.586154
+spot_angle = 14.421
+
+[node name="Compass" type="MeshInstance" parent="."]
+transform = Transform( 0.07, 0, 0, 0, 0.068711, -0.0133713, 0, 0.0133713, 0.068711, 0, 0.428655, -0.780903 )
+material_override = SubResource( 1 )
+mesh = ExtResource( 3 )
+material/0 = null
+script = ExtResource( 2 )
